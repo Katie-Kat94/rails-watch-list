@@ -1,12 +1,31 @@
+<div class="list_header"
+style="background-image: url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
 <h1> <%= @list.name%></h1>
-<p> <%= link_to 'Add Movie to The List',  new_list_bookmark_path(@list)  %></p>
+</div>
+  <div class="list_links">
+  <p> <%= link_to 'Add Movie',  new_list_bookmark_path(@list)  %></p>
+  <p><%= link_to 'Back to Lists', lists_path   %></p>
+  </div>
+
+
+
 
 <h2> Movies </h2>
 <% @list.bookmarks.each do |bookmark| %>
-<div>
-<p> <%= bookmark.movie.title  %> </p>
-<p> <%= link_to '[X]', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %> </p>
-</div>
-<% end %>
 
-<p><%= link_to 'back to lists', lists_path   %></p>
+
+
+<div class="movie_card">
+<img src=" https://image.tmdb.org/t/p/w500/<%= bookmark.movie.poster_url%>" alt="movie poster">
+  <div>
+    <p> <%= bookmark.movie.title  %> </p>
+    <p><%= bookmark.movie.overview  %></p>
+    <p><%= bookmark.movie.rating  %></p>
+      <div>
+      <p><%= bookmark.comment  %></p>
+      </div>
+  <p> <%= link_to '[X]', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %> </p>
+    </div>
+</div>
+
+<% end %>

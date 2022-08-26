@@ -5,9 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# require 'open_uri'
-# require 'json'
-
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 
 movie_serialized = URI.open(url).read

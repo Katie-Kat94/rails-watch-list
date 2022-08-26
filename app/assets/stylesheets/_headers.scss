@@ -1,5 +1,19 @@
 
 .header {
-  text-align: center;
-  background-color: pink;
+  background-image: url('header_background.jpg');
+  height: 119px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list_header {
+  background-size: contain;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
 }
