@@ -3,9 +3,11 @@
 </div>
 
 <% @lists.each do |list| %>
-<div>
+<div class="list_cards"
+style="background-image: url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
 <h3> <%= link_to list.name, list_path(list) %> </h3>
 </div>
 <% end %>
+
 
 <%= link_to 'Add a New List', new_list_path %>
